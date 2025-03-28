@@ -1,0 +1,40 @@
+programa {
+  funcao inicio() {
+
+    inteiro numeroUm, numeroDois, numeroTres, media
+
+    escreva ("Digite o primeiro número: ")
+    leia (numeroUm)
+
+    escreva ("Digite o segundo número: ")
+    leia (numeroDois)
+
+    escreva ("Digite o terceiro número: ")
+    leia (numeroTres)
+
+    se (numeroUm > numeroDois e numeroUm > numeroTres) {
+      escreva ("\nSeu maior número é "+numeroUm+".\n")
+    }
+    senao se (numeroDois>numeroUm e numeroDois>numeroTres){
+      escreva ("\nSeu maior número é "+numeroDois+".\n")
+    }
+    senao {
+      escreva ("\nSeu maior número é "+numeroTres+".\n")
+    }
+
+    se (numeroUm < numeroDois e numeroUm < numeroTres) {
+      escreva ("Seu menor número é "+numeroUm+".\n")
+    }
+    senao se (numeroDois < numeroUm e numeroDois < numeroTres){
+      escreva ("Seu menor número é "+numeroDois+".\n")
+    }
+    senao {
+      escreva ("Seu menor número é "+numeroTres+".\n")
+    }
+
+    media = (numeroUm + numeroDois + numeroTres) / 3
+
+    escreva ("\nA média aritmética dos três números é "+media+".\n")
+  
+  }
+}
