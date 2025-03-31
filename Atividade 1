@@ -1,40 +1,41 @@
-programa {
-  funcao inicio() {
+import java.util.Scanner;
 
-    inteiro numeroUm, numeroDois, numeroTres, media
+public class MaiorEMenorNumero {
 
-    escreva ("Digite o primeiro número: ")
-    leia (numeroUm)
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
 
-    escreva ("Digite o segundo número: ")
-    leia (numeroDois)
+        int numeroUm, numeroDois, numeroTres, media;
 
-    escreva ("Digite o terceiro número: ")
-    leia (numeroTres)
+        System.out.print("Digite o primeiro número: ");
+        numeroUm = scanner.nextInt();
 
-    se (numeroUm > numeroDois e numeroUm > numeroTres) {
-      escreva ("\nSeu maior número é "+numeroUm+".\n")
+        System.out.print("Digite o segundo número: ");
+        numeroDois = scanner.nextInt();
+
+        System.out.print("Digite o terceiro número: ");
+        numeroTres = scanner.nextInt();
+
+        if (numeroUm > numeroDois && numeroUm > numeroTres) {
+            System.out.println("\nSeu maior número é " + numeroUm + ".\n");
+        } else if (numeroDois > numeroUm && numeroDois > numeroTres) {
+            System.out.println("\nSeu maior número é " + numeroDois + ".\n");
+        } else {
+            System.out.println("\nSeu maior número é " + numeroTres + ".\n");
+        }
+
+        if (numeroUm < numeroDois && numeroUm < numeroTres) {
+            System.out.println("Seu menor número é " + numeroUm + ".\n");
+        } else if (numeroDois < numeroUm && numeroDois < numeroTres) {
+            System.out.println("Seu menor número é " + numeroDois + ".\n");
+        } else {
+            System.out.println("Seu menor número é " + numeroTres + ".\n");
+        }
+
+        media = (numeroUm + numeroDois + numeroTres) / 3;
+
+        System.out.println("\nA média aritmética dos três números é " + media + ".\n");
+
+        scanner.close();
     }
-    senao se (numeroDois>numeroUm e numeroDois>numeroTres){
-      escreva ("\nSeu maior número é "+numeroDois+".\n")
-    }
-    senao {
-      escreva ("\nSeu maior número é "+numeroTres+".\n")
-    }
-
-    se (numeroUm < numeroDois e numeroUm < numeroTres) {
-      escreva ("Seu menor número é "+numeroUm+".\n")
-    }
-    senao se (numeroDois < numeroUm e numeroDois < numeroTres){
-      escreva ("Seu menor número é "+numeroDois+".\n")
-    }
-    senao {
-      escreva ("Seu menor número é "+numeroTres+".\n")
-    }
-
-    media = (numeroUm + numeroDois + numeroTres) / 3
-
-    escreva ("\nA média aritmética dos três números é "+media+".\n")
-  
-  }
 }
