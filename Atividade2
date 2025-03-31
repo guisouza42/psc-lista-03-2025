@@ -1,0 +1,65 @@
+programa {
+  funcao inicio() {
+
+    real valorCompra, valorPago, troco
+    inteiro nota50, nota20, nota10, nota5, nota2, nota1
+
+    escreva ("LOJINHA DE PAGAMENTO\n")
+
+    escreva ("\nDigite o valor da compra(R$): ") 
+    leia (valorCompra)
+    escreva("Digite o valor pago(R$): ")
+    leia (valorPago)
+
+    se (valorPago < valorCompra) {
+      escreva ("\nA quantia paga é insuficiente para realizar a compra. \nAcrescente mais dinheiro!\n")
+    }
+
+    troco = valorPago - valorCompra
+    escreva ("\nSeu troco é R$"+troco+",00 reais.\n")
+
+    nota50 = 0
+    nota20 = 0
+    nota10 = 0
+    nota5 = 0
+    nota2 = 0
+    nota1 = 0
+
+    enquanto (troco >= 50){
+      troco = troco - 50
+      nota50 = nota50 + 1
+    }
+    enquanto (troco >= 20){
+      troco = troco - 20
+      nota20 = nota20 + 1
+    }
+    enquanto (troco >= 10){
+      troco = troco - 10
+      nota10 = nota10 + 1
+    }
+    enquanto (troco >= 5){
+      troco = troco - 5
+      nota5 = nota5 + 1
+    }
+    enquanto (troco >= 2){
+      troco = troco - 2
+      nota2 = nota2 + 1
+    }
+    enquanto (troco >= 1){
+      troco = troco - 1
+      nota1 = nota1 + 1
+    }
+
+    escreva ("\nTROCO DETALHADO\n")
+
+    escreva ("\nVocê receberá "+nota50+" nota(s) de R$50,00")
+    escreva ("\nVocê receberá "+nota20+" nota(s) de R$20,00")
+    escreva ("\nVocê receberá "+nota10+" nota(s) de R$10,00")
+    escreva ("\nVocê receberá "+nota5+" nota(s) de R$5,00")
+    escreva ("\nVocê receberá "+nota2+" nota(s) de R$2,00")
+    escreva ("\nVocê receberá "+nota1+" nota(s) de R$1,00\n")
+    
+
+
+  }
+}
