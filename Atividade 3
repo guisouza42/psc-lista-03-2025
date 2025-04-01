@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class EquacaoSegundoGrau {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        double a, b, c, delta, raiz1, raiz2;
+
+        System.out.print("Digite o valor do coeficiente a: ");
+        a = scanner.nextDouble();
+
+        System.out.print("Digite o valor do coeficiente b: ");
+        b = scanner.nextDouble();
+
+        System.out.print("Digite o valor do coeficiente c: ");
+        c = scanner.nextDouble();
+
+        if (a == 0 && b == 0 && c != 0) {
+            System.out.println("Coeficientes informados incorretamente.");
+        }
+
+        else if (a == 0 && b != 0) {
+            raiz1 = -c / b;
+            System.out.println("Essa é uma equação de primeiro grau");
+            System.out.println("A raiz real é: " + raiz1);
+        }
+
+        else {
+
+            delta = b * b - 4 * a * c;
+
+
+            if (delta < 0) {
+                System.out.println("Esta equação não possui raízes reais.");
+            }
+
+            else if (delta == 0) {
+                raiz1 = -b / (2 * a);
+                System.out.println("Esta equação possui duas raízes reais iguais.");
+                System.out.println("A raiz é: " + raiz1);
+            }
+
+            else {
+                raiz1 = (-b + Math.sqrt(delta)) / (2 * a);
+                raiz2 = (-b - Math.sqrt(delta)) / (2 * a);
+                System.out.println("Esta equação possui duas raízes reais diferentes.");
+                System.out.println("A primeira raiz é: " + raiz1);
+                System.out.println("A segunda raiz é: " + raiz2);
+            }
+        }
+
+        scanner.close();
+    }
+}
