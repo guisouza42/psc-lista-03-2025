@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class Calculadora {
+
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println ("Escolha um dos códigos para realizar a operação: ");
+        System.out.println ("Código 1: Perímetro do círculo");
+        System.out.println ("Código 2: Área do círculo");
+        System.out.println ("Código 3: Volume da esfera");
+
+        System.out.println("Digite o código da operação desejada: ");
+        int operacao = scanner.nextInt();
+
+        System.out.print("Digite o valor do raio do círculo ou esfera: ");
+        double raio = scanner.nextDouble();
+
+        double pi = 3.141592;
+
+        switch (operacao) {
+            case 1: 
+                double perimetro = 2 * pi * raio;
+                System.out.println("O perímetro do círculo é: " + perimetro);
+                break;
+
+            case 2: 
+                double area = pi * (raio * raio);
+                System.out.println("A área do círculo é: " + area);
+                break;
+
+            case 3: 
+                double volume = (4/3) * pi * (raio * raio * raio);
+                System.out.println("O volume da esfera é: " + volume);
+                break;
+
+            default: 
+                System.out.println("Código inválido, digite outro.");
+                break;
+        }
+
+        scanner.close();
+    }
+}
